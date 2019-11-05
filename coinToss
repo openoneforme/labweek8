@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+
+
+int main()
+{
+	int random;
+	char H_or_T;
+	cout << "Head or Tail?" << endl;
+	cin >> H_or_T;
+	switch (H_or_T) {
+		case 'H':
+			srand(time(NULL));
+			random = rand() % 2;
+			if (random = 1) 
+				cout << "You Win" << endl;
+			else
+				cout << "You Lose" << endl;
+			
+			break;
+		case 'T':
+			srand(time(NULL));
+			random = rand() % 2;
+			if (random = 0) 
+				cout << "You Win" << endl;
+			else
+				cout << "You Lose" << endl;
+			
+			break;
+	}
+    return 0;
+}
