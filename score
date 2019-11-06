@@ -1,0 +1,78 @@
+//This program was created by JASNI JAZALI BIN MOHD ZAMRI B031910077
+//labweek8 : using function to get score, calculate average score, and find lowest score
+
+#include <iostream>
+
+using namespace std;
+
+//function to get score from the user
+void getScore(int& x)
+{
+    cin >> x;
+}
+
+//function to calculate average of 4 highest score that has been receive from the user
+void calcAverage(int p, int o, int i, int u, int y,int lowest)
+{
+   cout << "Average Score is " << (p+o+i+u+y-lowest)/4;
+}
+
+//function to find lowest score based on the score that the user been given
+int findLowest(int a,int b)
+{
+    return (a < b) ? a : b;
+}
+
+int main()
+{
+    int a,b,c,d,e,lowest;
+    do
+    {
+    cout << "Enter 1st score: ";
+    getScore(a);
+    //while loop to make sure the user enter score number between 0 to 100
+    }while (!(a <= 100 && a >= 0));
+    //declare the first score as lowest
+    lowest = a;
+    cout << "Current Lowest number : " << lowest << endl;
+    do
+    {
+    cout << "Enter 2nd score: ";
+    getScore(b);
+    //while loop to make sure the user enter score number between 0 to 100
+    }while (!(b <= 100 && b >= 0));
+    //using previous score as lowest to compare which one would be the lowest
+    lowest = findLowest(lowest,b);
+    cout << "Current Lowest number : " << lowest << endl;
+    do
+    {
+    cout << "Enter 3rd score: ";
+    getScore(c);
+    //while loop to make sure the user enter score number between 0 to 100
+    }while (!(c <= 100 && c >= 0));
+    //using previous score as lowest to compare which one would be the lowest
+    lowest = findLowest(lowest,c);
+    cout << "Current Lowest number : " << lowest << endl;
+    do
+    {
+    cout << "Enter 4th score: ";
+    getScore(d);
+    //while loop to make sure the user enter score number between 0 to 100
+    }while (!(d <= 100 && d >= 0));
+    //using previous score as lowest to compare which one would be the lowest
+    lowest = findLowest(lowest,d);
+    cout << "Current Lowest number : " << lowest << endl;
+    do
+    {
+    cout << "Enter 5th score: ";
+    getScore(e);
+    //while loop to make sure the user enter score number between 0 to 100
+    }while (!(e <= 100 && e >= 0));
+    //using previous score as lowest to compare which one would be the lowest
+    lowest = findLowest(lowest,e);
+    cout << "Current Lowest number : " << lowest << endl;
+    cout << "Lowest Score is " << lowest << endl;
+    calcAverage(a,b,c,d,e,lowest);
+
+    return 0;
+}
